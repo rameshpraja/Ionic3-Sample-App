@@ -1,0 +1,21 @@
+.ios, .md {
+ 
+    page-home {
+ 
+        .scroll-content {
+            background-color: map-get($colors, light);
+        }
+ 
+    }
+    .child-detail-pos{
+        display: inline-block;
+        position: absolute;
+        margin-top: 6px;
+    }
+
+    ion-card-header {
+        font-weight: 700 !important ;
+        color:#089620 !important;
+    }
+
+}

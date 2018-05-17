@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngIf="notificationListData">
+        <ion-card *ngFor="let notificationList of notificationListData" class="notifcationClass"> 
+            <div>
+              <p class="dateposition">{{ notificationList.dateCreated | date }}</p>
+              <p class="title-style">{{ notificationList.title }}</p>
+            </div>  
+            <p text-wrap >{{ notificationList.description }}</p>
+              
+        </ion-card>
+      </ion-list>
+</ion-content>

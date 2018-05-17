@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ChildActivityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Child Activity {{childActivyObj?.firstname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="childActivities">
+
+    <ion-card *ngFor="let childActivity of childActivities" detail-none>
+          <ion-item detail-none class="item item-text-wrap" >
+                  <div style="display:inline-block;">
+                      <ion-avatar item-start>
+                          <img src="http://cebit2018angulardev.s3-website.ap-south-1.amazonaws.com/assets/img/parent-1.png">
+                      </ion-avatar> 
+                  </div>
+              <div style="display:inline-block;">
+                <h2 class="activityCat">{{childActivity.ActivityCategory}}</h2>
+                <p>Today;{{childActivity.CreatedOn | date}}</p>
+                <p>{{childActivity.ActivityCategoryValue}}</p>
+                <p>{{childActivity.ActivityCategorySubValue}}</p>
+              </div>
+          </ion-item>
+    </ion-card>
+  
+</ion-content>

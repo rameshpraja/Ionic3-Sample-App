@@ -1,0 +1,80 @@
+page-login {
+    .login-content {
+      background: #69bd54;
+      .logo-row {
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+      
+      //Start login card 
+      .login-box {
+        //background:#089620;
+        background:#fff;
+        padding: 20px 20px 0px 20px;
+        margin-top: 30px;
+        border-radius: 0px !important;
+      }
+      //End login card 
+      ion-row {
+         align-items: center;
+         text-align: center;
+       }
+       // start text input
+       ion-item {
+          border-radius: 3px !important;
+           padding-left: 20px !important;
+           font-size: 0.9em;
+           margin-bottom: 10px;
+           border: 1px solid #666;
+           box-shadow: none !important;
+           border-width:1px !important;
+           border-bottom-color:#666 !important;
+       }
+      //end text input
+       .signup-col {
+         margin: 0px 16px 0px 16px;
+         padding-bottom: 20px;
+       }
+   
+       .item-inner {
+         border-bottom-color: #ffffff !important;
+         box-shadow: none !important;
+         margin:0px !important;
+       }
+   
+       .submit-btn {
+        background: #089620;
+         border-radius: 3px !important;
+         border: 1px solid #ffffff;
+       }
+   
+       .register-btn {
+         color: #ffffff;
+         font-size: 0.8em;
+       }
+
+       ion-segment {
+        color:#ffffff;
+      }
+       .segment-button{
+        color:#ffffff !important;
+        border-width: 1px;
+        border-style: solid;
+        border-color:#fff;
+      }
+       .segment-button.activated, .segment-button.segment-activated{
+        border-color:#fff;
+        color:#089620 !important;
+        background-color:#fff;
+      }
+      h4{
+        color:white;
+        text-transform: uppercase;
+      }
+      .item-ios{
+        border:1px solid #666 !important;
+      }
+    }
+   
+  }
+  

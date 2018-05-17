@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Parent List</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="centerLocationBox()"> <ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+    </ion-buttons>
+
+    <ion-buttons end>
+     <button ion-button icon-only (click)="notificationPromptBox()"><ion-icon name="notifications"></ion-icon></button>
+   </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding *ngIf="parentLists">
+  <ion-card *ngFor="let list of parentLists" detail-none>
+      <button ion-item detail-none (click)="navigateToParentDetail(list)">
+
+        <ion-item detail-push class="item item-text-wrap" >
+            <ng-container *ngIf="sponsorTypeIdStatus">
+                <div style="display:inline-block; float:left;">
+                    <ion-avatar item-start class="profile-picture" [ngStyle]="generateUserIcon(list.name.charAt(0))">
+                        <!-- <img src="{{list.center_image}}"> -->
+                        <span>{{list.name.charAt(0)}}</span>
+                    </ion-avatar>
+                </div>
+            
+            </ng-container>
+            <div style="display:inline-block;">
+            <h2>{{list.name}}</h2>
+            <ng-container *ngFor="let sponsor of list.sponsors">
+                <p>{{sponsor.cell_phone}}</p>
+                <p>{{sponsor.email}}</p>
+            </ng-container>
+            </div>
+        </ion-item>
+      </button>
+  </ion-card>
+</ion-content>

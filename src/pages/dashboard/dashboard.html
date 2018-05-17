@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button [menuToggle]="activeMenu">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title *ngIf="userRole == 'center'">{{centerData?.centerName}}</ion-title>
+        <ion-title *ngIf="userRole == 'parent'">Dashboard</ion-title>
+      <!-- Start Center Location Popup-->
+      
+        <ion-buttons end *ngIf="userRole == 'center'">
+          <button ion-button icon-only (click)="centerLocationBox()"> <ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+        </ion-buttons>
+      <!-- End Center Location Popup-->
+    </ion-navbar>
+  </ion-header>
+
+<ion-content class="cards-bg">
+    <!-- Start Center Picture -->
+    <ion-card class="adv-map">
+              <ion-card-header>
+                Center Picture
+              </ion-card-header>
+          
+          <!-- Start Center Dashboard Image Native-->
+          <ion-avatar (click)="changePicture()" *ngIf="userRole == 'center'">
+              <img [src]="chosenPicture || placeholder" onerror="this.src='assets/imgs/no_lot_image.jpg'" />
+              <ion-content>
+              <ion-fab right bottom>
+                  <button ion-fab color="secondary">
+                    <ion-icon name="camera"></ion-icon>
+                  </button>
+              </ion-fab>
+            </ion-content>
+          </ion-avatar>
+          <!-- End Center Dashboard Image Native-->
+
+          <!-- Start Parent Dashboard Image -->
+          <ion-avatar *ngIf="userRole == 'parent'">
+            <img [src]="chosenPicture || placeholder" onerror="this.src='assets/imgs/daycare.png'" />
+          </ion-avatar>
+        <!-- End Parent Dashboard Image -->
+    </ion-card>
+  <!-- End Center Picture -->
+
+  <!-- Start Wheather Section -->
+  <ion-card>
+    <ion-card-header>Weather</ion-card-header>
+  <ion-item>
+    <ion-icon color="subtle" large item-start name='cloud'></ion-icon>
+    <h2>TODAY'S WEATHER AT {{DashboardWhether?.name}} </h2>
+    
+    <!-- <p>{{DashboardWhether?.main?.temp_min}}℉  /  {{DashboardWhether?.main?.temp_max}}℉ CLEAR </p> -->
+    <p>{{DashboardWhether?.main?.temp_min}} &#8457;  /  {{DashboardWhether?.main?.temp_max}}&#8457; CLEAR </p>
+  </ion-item>
+  </ion-card>
+<!-- End Wheather Section -->
+
+<!-- Start Number of Leads Section -->
+<ng-container *ngIf="userRole == 'parent';then parentBlock else centerBlock">here is ignored</ng-container>
+
+<ng-template #parentBlock>
+    <div *ngIf="childDetails">
+        <ion-card-header>Your Child / Children</ion-card-header>
+        <ion-card *ngFor="let list of childDetails" detail-none>
+            
+            <button ion-item detail-none (click)="childActivities(list)">
+              <ion-item detail-push class="item item-text-wrap" >
+                      <div style="display:inline-block;">
+                          <ion-avatar item-start>
+                              <img src="{{list.childImg}}">
+                          </ion-avatar>
+                      </div>
+                  <div class="child-detail-pos"style="display:inline-block;">
+                    <h2>{{list.firstname}}</h2>
+                    <p>{{list.dob | date}}</p>
+                  </div>
+              </ion-item>
+            </button>
+        </ion-card>
+      </div>
+</ng-template>
+
+<ng-template #centerBlock>
+  <ion-card>
+    <ion-card-header>
+      Leads
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+    <!-- <ion-card-content *ngIf="chartLeadsLength <= 0" style="text-align:center;">
+        <span style="text-align:center;">No Data Available</span>
+    </ion-card-content> -->
+  </ion-card>
+</ng-template>
+
+</ion-content>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "359285562460",
+    "firebase_url": "https://cebit-202710.firebaseio.com",
+    "project_id": "cebit-202710",
+    "storage_bucket": "cebit-202710.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359285562460:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359285562460-66bp8bh4bdcq757lc3p3cn0grnau2kkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPSF8e2f4czI84rqIVvnNFRV4MhT90CX8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

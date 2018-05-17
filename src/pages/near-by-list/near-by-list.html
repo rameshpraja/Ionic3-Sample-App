@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      <ion-title>Parent List</ion-title>
+      <ion-buttons end>
+       <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+     </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card *ngFor="let list of mapLists" detail-none>
+        <button ion-item detail-none>
+          <ion-item detail-none class="item item-text-wrap">
+            <ion-avatar item-start>
+              <img src="{{list.center_image}}">
+            </ion-avatar>
+            <h2>{{list.name}}</h2>
+            <p>{{list.phone}}</p>
+            <p>{{list.email}}</p>
+            <p>{{list.address1}}</p>
+          </ion-item>
+        </button>
+    </ion-card>
+  </ion-content>
+  

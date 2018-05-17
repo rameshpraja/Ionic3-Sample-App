@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Detail</ion-title>
+    <ion-buttons end>
+     <button ion-button icon-only (click)="notificationPromptBox()"><ion-icon name="notifications" ></ion-icon></button>
+     <!-- <button ion-button icon-only class = "button" ng-click = "showPopup()"><ion-icon name="notifications"></ion-icon></button> -->
+   </ion-buttons>
+  </ion-navbar>
+
+ <ion-list-header>
+  Your Child / Children
+ </ion-list-header>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngFor="let parentDetail of parentDetails">
+        <ion-item detail-none>
+          <ion-avatar item-start>
+              <img src="{{parentDetail.childImg}}">
+          </ion-avatar>
+            <h2>{{parentDetail.firstname}}</h2>
+              <p>{{parentDetail.dob}}</p>
+        </ion-item>
+      
+    </ion-card>
+</ion-content>
+
+<div id="fab">
+<ion-fab right bottom>
+   <button ion-fab color="danger"><ion-icon name="md-share"></ion-icon></button>
+   <ion-fab-list side="left">
+     <button (click)="notificationPromptBox()" ion-fab color="primary"><ion-icon name="notifications"></ion-icon></button>
+     <button (click)="whatsapp($event);" ion-fab color="secondary"><ion-icon name="logo-whatsapp"></ion-icon></button>
+     <button (click)="mail($event);" ion-fab color="danger"><ion-icon name="mail"></ion-icon></button>
+   </ion-fab-list>
+ </ion-fab>
+ </div>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Near By Location</ion-title>
+    <ion-buttons end *ngIf="userRole == 'center'">
+        <button ion-button icon-only (click)="centerLocationBox()"> <ion-icon name="arrow-dropdown-circle"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<!-- <div #map id="map" style="height: 80%"></div> -->
+
+<ion-tabs>
+    <ion-tab [root]="nearByListPage" tabTitle="Near By List" tabIcon="list"></ion-tab>
+    <ion-tab [root]="nearByMapPage" tabTitle="Near By Map" tabIcon="compass"></ion-tab>
+  </ion-tabs>
+  
+
+<!-- <ion-content no-bounce>
+<div>
+  <ion-segment [(ngModel)]="mapLists">
+    <ion-segment-button value="nearByList">
+      Near By List
+    </ion-segment-button>
+    <ion-segment-button value="nearByMap">
+      Near By Map
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="mapLists">
+    <div  *ngSwitchCase="'nearByMap'" >
+        <div #map id="map" style="height: 20%"></div>
+    </div>
+  <div *ngSwitchCase="'nearByList'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+    ...
+  </div>
+</div>
+</ion-content> -->
